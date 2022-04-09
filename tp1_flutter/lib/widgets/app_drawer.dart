@@ -11,7 +11,7 @@ class AppDrawer extends StatelessWidget {
           DrawerHeader(child: Column(
             children: [
               CircleAvatar(
-                backgroundImage: AssetImage("/40.jpg"),
+                backgroundColor:Colors.black,
                 radius: 50,
               ),
               SizedBox(height: 10),

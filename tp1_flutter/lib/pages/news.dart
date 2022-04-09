@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:tp1_flutter/pages/article_view.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -63,6 +64,13 @@ class _NewsState extends State<News> {
                 itemCount:articles==null||articles['articles']==null?0: articles['articles'].length,
                 itemBuilder: (context, index) {
                 return ListTile(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(
+                          builder: (context) => ArticleView(
+                            postUrl: articles['articles'][index]['url'],
+                          )
+                      ));
+                    },
                   leading: GFAvatar(
                     backgroundImage: NetworkImage(articles['articles'][index]["urlToImage"]),
                       shape: GFAvatarShape.square
