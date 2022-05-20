@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:getwidget/getwidget.dart';
+import 'package:tp1_flutter/pages/article_view.dart';
+
 
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
@@ -54,6 +56,13 @@ class NewsProviders extends StatelessWidget {
                 itemCount:newsStat.articles==null||newsStat.articles['articles']==null?0: newsStat.articles['articles'].length,
                 itemBuilder: (context, index) {
                 return ListTile(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(
+                        builder: (context) => ArticleView(
+                          postUrl: newsStat.articles['articles'][index]['url'],
+                        )
+                    ));
+                  },
                 leading: GFAvatar(
                 backgroundImage: NetworkImage(newsStat.articles['articles'][index]["urlToImage"]),
                 shape: GFAvatarShape.square

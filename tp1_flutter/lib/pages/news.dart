@@ -32,6 +32,11 @@ class _NewsState extends State<News> {
     return Scaffold(
       appBar: AppBar(
         title: Text("news"),
+    actions: [
+      IconButton(icon: Icon(Icons.search), onPressed: () {
+
+    })
+    ]
       ),
       body: Padding(
         padding: EdgeInsets.all(10),

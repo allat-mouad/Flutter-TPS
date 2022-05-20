@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
         routes: {
           "/":(context)=>Home(),
           "/contacts":(context)=>ContactProvider(),
-          "/news":(context)=>News(),
+          "/news":(context)=>NewsProviders(),
           "/github_users":(context)=>GitHubUsersProvider(),
 
 
